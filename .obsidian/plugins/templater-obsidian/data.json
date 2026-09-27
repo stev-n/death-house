@@ -1,0 +1,36 @@
+{
+  "data_version": 2,
+  "command_timeout": 5,
+  "templates_folder": "07 Templates",
+  "templates_pairs": [],
+  "trigger_on_file_creation_mode": "folder",
+  "auto_jump_to_cursor": true,
+  "jump_to_cursor_after_file_name": false,
+  "shell_path": "",
+  "user_scripts_folder": "",
+  "folder_templates": [
+    {
+      "folder": "02 The House/Rooms",
+      "template": "07 Templates/Room.md"
+    },
+    {
+      "folder": "04 NPCs",
+      "template": "07 Templates/NPC.md"
+    },
+    {
+      "folder": "03 Party",
+      "template": "07 Templates/PC Sheet.md"
+    },
+    {
+      "folder": "05 Bestiary",
+      "template": "07 Templates/Monster.md"
+    }
+  ],
+  "file_templates": [],
+  "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
+  "enabled_templates_hotkeys": [],
+  "startup_templates": [],
+  "intellisense_render": "1",
+  "ignore_folders_on_creation": []
+}

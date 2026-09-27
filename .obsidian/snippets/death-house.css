@@ -1,0 +1,323 @@
+/* ============================================================
+   DEATH HOUSE — a gothic candlelit theme for Obsidian
+   Toggle in Settings → Appearance → CSS snippets
+   ============================================================ */
+
+.theme-dark {
+  /* --- the palette --- */
+  --dh-ink:        #0c0a09;  /* deepest black-brown  */
+  --dh-soot:       #141110;  /* panel background     */
+  --dh-ash:        #1e1917;  /* raised surface       */
+  --dh-smoke:      #2b2421;  /* borders              */
+  --dh-bone:       #ddd5c6;  /* body text            */
+  --dh-dust:       #9a9084;  /* muted text           */
+  --dh-candle:     #d9a13f;  /* amber accent         */
+  --dh-candle-dim: #8a6524;
+  --dh-blood:      #a8231f;  /* crimson accent       */
+  --dh-blood-lit:  #d94f3d;
+  --dh-moss:       #6b7a54;  /* sickly green         */
+  --dh-bruise:     #6b4a7a;  /* arcane purple        */
+
+  --background-primary:          var(--dh-ink);
+  --background-primary-alt:      var(--dh-soot);
+  --background-secondary:        var(--dh-soot);
+  --background-secondary-alt:    var(--dh-ash);
+  --background-modifier-border:  var(--dh-smoke);
+  --background-modifier-hover:   #241d1a;
+
+  --text-normal:   var(--dh-bone);
+  --text-muted:    var(--dh-dust);
+  --text-faint:    #6d655c;
+  --text-accent:   var(--dh-candle);
+  --text-accent-hover: var(--dh-blood-lit);
+  --text-selection: rgba(168, 35, 31, 0.32);
+
+  --h1-color: var(--dh-blood-lit);
+  --h2-color: var(--dh-candle);
+  --h3-color: #c9bda6;
+
+  --interactive-accent:       var(--dh-blood);
+  --interactive-accent-hover: var(--dh-blood-lit);
+  --checkbox-color:           var(--dh-blood);
+  --checkbox-color-hover:     var(--dh-blood-lit);
+
+  --link-color:       var(--dh-candle);
+  --link-color-hover: var(--dh-blood-lit);
+  --link-unresolved-color: #7d6a56;
+  --link-unresolved-opacity: 0.6;
+
+  --font-text: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-interface: "Segoe UI", Inter, sans-serif;
+  --font-monospace: "Cascadia Mono", Consolas, monospace;
+}
+
+/* --- a faint candle-glow vignette behind the note --- */
+.theme-dark .markdown-preview-view,
+.theme-dark .markdown-source-view.mod-cm6 .cm-scroller {
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% 0%, rgba(217, 161, 63, 0.055), transparent 70%),
+    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(168, 35, 31, 0.045), transparent 70%);
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+.markdown-preview-view h1,
+.markdown-source-view.mod-cm6 .HyperMD-header-1 {
+  font-family: var(--font-text);
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  border-bottom: 1px solid var(--dh-smoke);
+  padding-bottom: 0.25em;
+  margin-bottom: 0.6em;
+}
+
+.markdown-preview-view h2,
+.markdown-source-view.mod-cm6 .HyperMD-header-2 {
+  font-family: var(--font-text);
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* a hairline rule under h2, fading out to the right */
+.markdown-preview-view h2::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 0.3em;
+  background: linear-gradient(to right, var(--dh-candle-dim), transparent 65%);
+}
+
+.markdown-preview-view h3 {
+  font-family: var(--font-text);
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+/* drop-cap the first paragraph of a note that asks for it */
+.dh-dropcap .markdown-preview-view > .el-p:first-of-type p::first-letter {
+  float: left;
+  font-size: 3.4em;
+  line-height: 0.82;
+  padding: 0.05em 0.1em 0 0;
+  color: var(--dh-blood-lit);
+  font-family: var(--font-text);
+}
+
+/* ============================================================
+   CALLOUTS — the DM's toolkit
+   Use:  > [!read-aloud]   > [!secret]   > [!trap] ...
+   ============================================================ */
+
+.callout {
+  border-radius: 3px;
+  border: 1px solid var(--dh-smoke);
+  border-left-width: 3px;
+  mix-blend-mode: normal;
+}
+
+/* Boxed text you read at the table */
+.callout[data-callout="read-aloud"] {
+  --callout-color: 217, 161, 63;
+  --callout-icon: lucide-scroll-text;
+  background: linear-gradient(180deg, rgba(217,161,63,0.07), rgba(217,161,63,0.03));
+  border-left-color: var(--dh-candle);
+}
+.callout[data-callout="read-aloud"] .callout-content {
+  font-family: var(--font-text);
+  font-style: italic;
+  font-size: 1.02em;
+  line-height: 1.65;
+  color: #e6dcc8;
+}
+
+/* Things the players must earn */
+.callout[data-callout="secret"] {
+  --callout-color: 107, 74, 122;
+  --callout-icon: lucide-eye-off;
+  background: rgba(107, 74, 122, 0.09);
+  border-left-color: var(--dh-bruise);
+}
+
+/* Traps and hazards */
+.callout[data-callout="trap"] {
+  --callout-color: 168, 35, 31;
+  --callout-icon: lucide-alert-triangle;
+  background: rgba(168, 35, 31, 0.10);
+  border-left-color: var(--dh-blood);
+}
+
+/* Loot */
+.callout[data-callout="treasure"] {
+  --callout-color: 217, 161, 63;
+  --callout-icon: lucide-gem;
+  background: rgba(217, 161, 63, 0.08);
+  border-left-color: var(--dh-candle-dim);
+}
+
+/* Monsters in the room */
+.callout[data-callout="creature"] {
+  --callout-color: 107, 122, 84;
+  --callout-icon: lucide-skull;
+  background: rgba(107, 122, 84, 0.10);
+  border-left-color: var(--dh-moss);
+}
+
+/* Background the DM should know but won't read out */
+.callout[data-callout="lore"] {
+  --callout-color: 154, 144, 132;
+  --callout-icon: lucide-book-open;
+  background: rgba(154, 144, 132, 0.06);
+  border-left-color: var(--dh-dust);
+}
+
+/* Checks, DCs, mechanics */
+.callout[data-callout="check"] {
+  --callout-color: 120, 140, 160;
+  --callout-icon: lucide-dices;
+  background: rgba(120, 140, 160, 0.08);
+  border-left-color: #6d8296;
+}
+
+.callout-title {
+  font-variant: small-caps;
+  letter-spacing: 0.07em;
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+/* ============================================================
+   ROOM NOTES  (cssclasses: room)
+   ============================================================ */
+
+.room .inline-title,
+.room .markdown-preview-view h1:first-of-type {
+  color: var(--dh-candle);
+  border-bottom: 1px solid var(--dh-candle-dim);
+}
+
+/* area number badge, fed by the `area` frontmatter field */
+.room .metadata-property[data-property-key="area"] .metadata-property-value {
+  font-weight: 700;
+  color: var(--dh-blood-lit);
+}
+
+/* ============================================================
+   PROPERTIES / FRONTMATTER
+   ============================================================ */
+
+.metadata-container {
+  background: var(--dh-soot);
+  border: 1px solid var(--dh-smoke);
+  border-radius: 4px;
+  padding: 0.5em 0.75em;
+}
+.metadata-property-key { color: var(--dh-dust); font-variant: small-caps; letter-spacing: 0.04em; }
+
+/* ============================================================
+   TABLES — used heavily by the Dataview panels
+   ============================================================ */
+
+.markdown-preview-view table,
+.markdown-rendered table {
+  border-collapse: collapse;
+  font-size: 0.92em;
+  width: 100%;
+}
+.markdown-rendered th {
+  background: var(--dh-ash);
+  color: var(--dh-candle);
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--dh-candle-dim);
+  text-align: left;
+}
+.markdown-rendered td { border-bottom: 1px solid var(--dh-smoke); }
+.markdown-rendered tr:hover td { background: rgba(217, 161, 63, 0.05); }
+
+/* ============================================================
+   TAG PILLS
+   ============================================================ */
+
+.markdown-rendered a.tag {
+  background: rgba(168, 35, 31, 0.16);
+  border: 1px solid rgba(168, 35, 31, 0.4);
+  color: #e0a79c;
+  border-radius: 10px;
+  padding: 1px 9px;
+  font-size: 0.78em;
+  font-family: var(--font-interface);
+  text-decoration: none;
+}
+.markdown-rendered a.tag:hover { background: rgba(168, 35, 31, 0.3); }
+
+/* ============================================================
+   MAPS — give the Leaflet frame a lantern-lit border
+   ============================================================ */
+
+.block-language-leaflet {
+  border: 1px solid var(--dh-smoke);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 28px rgba(0, 0, 0, 0.75), inset 0 0 60px rgba(0, 0, 0, 0.45);
+}
+.leaflet-container { background: var(--dh-ink) !important; }
+
+/* embedded map images */
+.markdown-rendered img {
+  border-radius: 3px;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* ============================================================
+   DASHBOARD BITS
+   ============================================================ */
+
+/* four-across link grid: wrap links in a div with class dh-grid */
+.dh-grid ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  gap: 0.5rem;
+  list-style: none;
+  padding-left: 0;
+}
+.dh-grid li {
+  background: var(--dh-soot);
+  border: 1px solid var(--dh-smoke);
+  border-left: 3px solid var(--dh-blood);
+  border-radius: 3px;
+  padding: 0.6em 0.8em;
+  transition: border-left-color 120ms ease, background 120ms ease;
+}
+.dh-grid li:hover {
+  background: var(--dh-ash);
+  border-left-color: var(--dh-candle);
+}
+.dh-grid li a { text-decoration: none; font-variant: small-caps; letter-spacing: 0.04em; }
+
+/* horizontal rule as a fleuron */
+.markdown-rendered hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--dh-smoke) 20%, var(--dh-candle-dim) 50%, var(--dh-smoke) 80%, transparent);
+  margin: 2em 0;
+}
+
+/* checkboxes — prep list satisfaction */
+.markdown-rendered input[type="checkbox"]:checked + * ,
+.markdown-rendered .task-list-item.is-checked {
+  color: var(--text-faint);
+  text-decoration: line-through;
+  text-decoration-color: var(--dh-blood);
+}
+
+/* ============================================================
+   SIDEBAR / CHROME
+   ============================================================ */
+
+.nav-file-title, .nav-folder-title { font-size: 0.9em; }
+.nav-folder-title-content { font-variant: small-caps; letter-spacing: 0.04em; color: var(--dh-candle); }
+.workspace-tab-header.is-active { border-top: 2px solid var(--dh-blood); }

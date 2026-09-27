@@ -1,0 +1,14 @@
+{
+  "accentColor": "#a8231f",
+  "theme": "obsidian",
+  "cssTheme": "",
+  "enabledCssSnippets": [
+    "death-house"
+  ],
+  "baseFontSize": 17,
+  "textFontFamily": "",
+  "interfaceFontFamily": "",
+  "monospaceFontFamily": "",
+  "showViewHeader": true,
+  "nativeMenus": false
+}

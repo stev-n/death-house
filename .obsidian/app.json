@@ -1,0 +1,15 @@
+{
+  "showInlineTitle": true,
+  "attachmentFolderPath": "06 Assets",
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "alwaysUpdateLinks": true,
+  "showUnsupportedFiles": false,
+  "readableLineLength": true,
+  "strictLineBreaks": false,
+  "propertiesInDocument": "visible",
+  "defaultViewMode": "preview",
+  "livePreview": true,
+  "promptDelete": false,
+  "trashOption": "local"
+}
