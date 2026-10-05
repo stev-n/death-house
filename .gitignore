@@ -10,3 +10,5 @@ desktop.ini
 
 # LiveSync credentials & local state
 .obsidian/plugins/obsidian-livesync/data.json
+flag_rebuild.md
+flag_fetch.md
