@@ -7,3 +7,6 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# LiveSync credentials & local state
+.obsidian/plugins/obsidian-livesync/data.json
