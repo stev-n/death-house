@@ -1,0 +1,43 @@
+---
+area: 29
+room: Ghoulish Encounter
+floor: Dungeon Level
+status: unexplored
+cssclasses:
+  - room
+tags:
+  - room
+  - dungeon-level
+---
+
+> [!read-aloud] Read aloud
+>
+
+## What's Here
+
+-
+
+> [!check] Checks & DCs
+>
+
+> [!creature] Creatures
+>
+
+> [!treasure] Treasure
+>
+
+> [!secret] Secrets & Traps
+>
+
+## Exits
+
+-
+
+## My Description
+
+- **Place / map:**
+- **Things / events:**
+- **Dialogue:**
+
+---
+[[Dungeon Level|← Dungeon Level]]  ·  [[Death House (Map Hub)]]

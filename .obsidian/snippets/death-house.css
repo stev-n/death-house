@@ -46,8 +46,8 @@
   --link-unresolved-color: #7d6a56;
   --link-unresolved-opacity: 0.6;
 
-  --font-text: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  --font-interface: "Segoe UI", Inter, sans-serif;
+  --font-text: "Lato", sans-serif;
+  --font-interface: "Lato", sans-serif;
   --font-monospace: "Cascadia Mono", Consolas, monospace;
 }
 

@@ -6,8 +6,8 @@
     "death-house"
   ],
   "baseFontSize": 17,
-  "textFontFamily": "",
-  "interfaceFontFamily": "",
+  "textFontFamily": "Lato",
+  "interfaceFontFamily": "Lato",
   "monospaceFontFamily": "",
   "showViewHeader": true,
   "nativeMenus": false

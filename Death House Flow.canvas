@@ -1,0 +1,29 @@
+{
+	"nodes":[
+		{"id":"scene-0","type":"file","file":"01 The House/Exterior.md","x":0,"y":0,"width":560,"height":420,"color":"1"},
+		{"id":"map-0","type":"file","file":"05 Assets/Maps/Death House - Exterior.webp","x":680,"y":0,"width":345,"height":460},
+		{"id":"scene-1","type":"file","file":"01 The House/First Floor.md","x":0,"y":620,"width":560,"height":420,"color":"3"},
+		{"id":"map-1","type":"file","file":"05 Assets/Maps/Death House - First Floor.webp","x":680,"y":620,"width":345,"height":460},
+		{"id":"scene-2","type":"file","file":"01 The House/Second Floor.md","x":0,"y":1240,"width":560,"height":420,"color":"3"},
+		{"id":"map-2","type":"file","file":"05 Assets/Maps/Death House - Second Floor.webp","x":680,"y":1240,"width":345,"height":460},
+		{"id":"scene-3","type":"file","file":"01 The House/Third Floor.md","x":0,"y":1860,"width":560,"height":420,"color":"3"},
+		{"id":"map-3","type":"file","file":"05 Assets/Maps/Death House - Third Floor.webp","x":680,"y":1860,"width":345,"height":460},
+		{"id":"scene-4","type":"file","file":"01 The House/Attic.md","x":0,"y":2480,"width":560,"height":420,"color":"3"},
+		{"id":"map-4","type":"file","file":"05 Assets/Maps/Death House - Attic.webp","x":680,"y":2480,"width":345,"height":460},
+		{"id":"scene-5","type":"file","file":"01 The House/Dungeon Level.md","x":0,"y":3100,"width":560,"height":540,"color":"1"},
+		{"id":"map-5","type":"file","file":"05 Assets/Maps/Death House - Dungeon Level.webp","x":680,"y":3100,"width":345,"height":460}
+	],
+	"edges":[
+		{"id":"map-link-0","fromNode":"scene-0","fromSide":"right","toNode":"map-0","toSide":"left","label":"Map"},
+		{"id":"map-link-1","fromNode":"scene-1","fromSide":"right","toNode":"map-1","toSide":"left","label":"Map"},
+		{"id":"flow-1","fromNode":"scene-0","fromSide":"bottom","toNode":"scene-1","toSide":"top"},
+		{"id":"map-link-2","fromNode":"scene-2","fromSide":"right","toNode":"map-2","toSide":"left","label":"Map"},
+		{"id":"flow-2","fromNode":"scene-1","fromSide":"bottom","toNode":"scene-2","toSide":"top"},
+		{"id":"map-link-3","fromNode":"scene-3","fromSide":"right","toNode":"map-3","toSide":"left","label":"Map"},
+		{"id":"flow-3","fromNode":"scene-2","fromSide":"bottom","toNode":"scene-3","toSide":"top"},
+		{"id":"map-link-4","fromNode":"scene-4","fromSide":"right","toNode":"map-4","toSide":"left","label":"Map"},
+		{"id":"flow-4","fromNode":"scene-3","fromSide":"bottom","toNode":"scene-4","toSide":"top"},
+		{"id":"map-link-5","fromNode":"scene-5","fromSide":"right","toNode":"map-5","toSide":"left","label":"Map"},
+		{"id":"flow-5","fromNode":"scene-4","fromSide":"bottom","toNode":"scene-5","toSide":"top","label":"21 Secret Stairs"}
+	]
+}
